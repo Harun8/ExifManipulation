@@ -30,12 +30,16 @@ const jpgRotation = async (rn) => {
   ];
   gps[piexif.GPSIFD.GPSVersionID] = [7, 7, 7, 7];
   gps[piexif.GPSIFD.GPSDateStamp] = "1999:99:99 99:99:99";
+  gps[piexif.GPSIFD.GPSLatitude] = "1999:99:99 99:99:99";
+  gps[piexif.GPSIFD.GPSLongitude] = "1999:99:99 99:99:99";
+
+  GPSLongitude;
   //   exif[piexif.ImageIFD.Orientation] = 0;
 
   zeroth[piexif.ImageIFD.Orientation] = rn;
   var exifObj = { "0th": zeroth, Exif: exif, GPS: gps };
 
-  const exifbytes = piexif.dump(exifObj);
+  const exifbytes = piexif.dump(exifObj); // get exif data as a string
   const newJpeg = piexif.insert(exifbytes, outBuffer.toString("binary"));
   const newData = Buffer.from(newJpeg, "binary");
 
