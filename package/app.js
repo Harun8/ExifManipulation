@@ -1,7 +1,22 @@
-const { heicToJpgRotation } = require("./src/heic");
 const { jpgRotation } = require("./src/jpg");
 
-jpgRotation(5);
+// const img = fs.readFileSync("./src/images/90R.jpg");
+// const outBuffer = Buffer.from(img);
+
+const callJpgRotation = async (imageBuffer, rn) => {
+  let newBuffer = await jpgRotation(imageBuffer, rn);
+
+  return newBuffer;
+  //   fs.writeFileSync("./outR.jpg", newBuffer);
+};
+
+module.exports = {
+  callJpgRotation,
+};
+// callRotation();
+
+// path to image
+
 // heicToJpgRotation(4);
 
 // const getImageOrientation = () => {
