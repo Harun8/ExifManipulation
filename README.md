@@ -3,15 +3,7 @@
 
 exifm is an npm package that allows you to easily manipulate EXIF data of JPEG images, specifically focusing on rotating images based on user input to persist the orientation changes. This package ensures that your images are displayed correctly across different platforms by modifying their EXIF orientation metadata.
 
-Table of Contents
-Installation
-Usage
-Example
-Functionality
-Benefits
-Error Handling
-Further Resources
-License
+
 
 
 ## Installation
