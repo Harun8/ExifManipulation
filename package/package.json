@@ -1,6 +1,6 @@
 {
   "name": "exifm",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -8,10 +8,9 @@
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "repository":{
+  "repository": {
     "type": "git",
-    "url" : "https://github.com/Harun8/ExifManipulation"
-
+    "url": "https://github.com/Harun8/ExifManipulation"
   },
   "author": "Harun Abdi",
   "license": "ISC",

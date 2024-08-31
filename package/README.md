@@ -1,7 +1,6 @@
 # exifm - Image EXIF Data Manipulation and Rotation
 
-
-exifm is an npm package that allows you to easily manipulate EXIF data of JPEG images, specifically focusing on rotating images based on user input to persist the orientation changes. This package ensures that your images are displayed correctly across different platforms by modifying their EXIF orientation metadata. 
+exifm is an npm package that allows you to easily manipulate EXIF data of JPEG images, specifically focusing on rotating images based on user input to persist the orientation changes. This package ensures that your images are displayed correctly across different platforms by modifying their EXIF orientation metadata.
 
 Not sure why you need this package. [Read my article about Exif manipulation](https://medium.com/@harunabdi8/mastering-exif-data-effortlessly-control-image-orientation-for-a-flawless-user-experience-d6c0dc42fa5c)
 
@@ -17,7 +16,6 @@ npm install exifm
 Usage
 Example
 Below is an example of how to use the exifm package to rotate a JPEG image and persist the orientation change:
-
 
 ```javascript
 const exifm = require("exifm");
@@ -45,7 +43,6 @@ const rotateImage = async (outBuffer, rn) => {
 })();
 ```
 
-
 ## Functionality
 
 The exifm package provides the following functionality:
@@ -58,9 +55,7 @@ EXIF Data Manipulation: Allows you to manipulate various EXIF tags, including th
 
 This function handles the core functionality of rotating an image by modifying its EXIF data:
 
-
 ```javascript
-
 const jpgRotation = async (ImageBuffer, rn) => {
   try {
     if (!Buffer.isBuffer(ImageBuffer)) {
@@ -71,21 +66,6 @@ const jpgRotation = async (ImageBuffer, rn) => {
     let zeroth = {};
     let gps = {};
 
-    zeroth[piexif.ImageIFD.Make] = "Make";
-    zeroth[piexif.ImageIFD.XResolution] = [777, 1];
-    zeroth[piexif.ImageIFD.YResolution] = [777, 1];
-    zeroth[piexif.ImageIFD.Software] = "Piexifjs";
-    exif[piexif.ExifIFD.DateTimeOriginal] = "2010:10:10 10:10:10";
-    exif[piexif.ExifIFD.LensMake] = "LensMake";
-    exif[piexif.ExifIFD.Sharpness] = 777;
-    exif[piexif.ExifIFD.LensSpecification] = [
-      [1, 1],
-      [1, 1],
-      [1, 1],
-      [1, 1],
-    ];
-    gps[piexif.GPSIFD.GPSVersionID] = [7, 7, 7, 7];
-    gps[piexif.GPSIFD.GPSDateStamp] = "1999:99:99 99:99:99";
     gps[piexif.GPSIFD.GPSLatitude] = "1999:99:99 99:99:99";
     gps[piexif.GPSIFD.GPSLongitude] = "1999:99:99 99:99:99";
 
@@ -104,6 +84,7 @@ const jpgRotation = async (ImageBuffer, rn) => {
 
 module.exports = { jpgRotation };
 ```
+
 ## Benefits
 
 1. Persistent Changes: The EXIF orientation changes persist across all platforms and applications, unlike client-side CSS rotations which only last during the session.
@@ -111,9 +92,11 @@ module.exports = { jpgRotation };
 3. Compatibility: Most modern image viewers and software respect EXIF orientation data, ensuring consistent display.
 
 ## Error Handling
+
 The exifm package includes basic error handling to ensure that the input is a valid Buffer and to manage potential issues during the EXIF manipulation process. Any encountered errors will be logged to the console.
 
 ## Further Resources
+
 For more detailed information on EXIF data manipulation and the underlying library used (piexifjs), refer to the following resources:
 
 1. [EXIF Data and Orientation Specification](https://sirv.com/help/articles/rotate-photos-to-be-upright/)
