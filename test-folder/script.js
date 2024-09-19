@@ -9,7 +9,7 @@ const rotateImage = async (outBuffer, rn) => {
 
 (async () => {
   try {
-    // Await the result of rotateImage
+    // Change the number to see the image rotate
     let buffer = await rotateImage(outBuffer, 8);
 
     // Log the result
